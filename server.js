@@ -10,6 +10,8 @@ app.get("/", (req, res)=>{
     res.sendFile(__dirname+"/index.html")
 })
 
+app.use(express.static('public'));
+
 io.on('connection', function(socket){
     console.log(`Client is connected: ${socket.id}`);
 })
